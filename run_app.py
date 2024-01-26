@@ -1,1 +1,8 @@
-# this file is to run apps (or files)
+# this file is to run all files
+
+
+# ma_algorithm.py file
+
+
+
+# deep_learning.py file
