@@ -26,7 +26,7 @@ def plot_accuracy_comparison(accuracies, titles):
 
     plt.show()
 
-# Example usage:
+# Naive Bayes results for Twitter and IMDb
 twitter_accuracy = 0.6837
 imdb_accuracy = 0.5077
 

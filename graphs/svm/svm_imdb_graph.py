@@ -7,7 +7,6 @@ def plot_classification_report(report, title):
     precision = [report[label]['precision'] for label in report.keys()]
     recall = [report[label]['recall'] for label in report.keys()]
     f1_score = [report[label]['f1-score'] for label in report.keys()]
-    support = [report[label]['support'] for label in report.keys()]
 
     labels = [sentiment_labels[label] for label in report.keys()]
 
@@ -27,18 +26,24 @@ def plot_classification_report(report, title):
 
     plt.show()
 
-# Naive Bayes results for Twitter US Airline  
-twitter_report = {
-    -1: {'precision': 0.67, 'recall': 1.00, 'f1-score': 0.80, 'support': 1835},
-    0: {'precision': 0.78, 'recall': 0.12, 'f1-score': 0.21, 'support': 620},
-    1: {'precision': 0.82, 'recall': 0.21, 'f1-score': 0.33, 'support': 473}
+
+
+# SVM results for IMDb
+svm_imdb_report = {
+    -1: {'precision': 0.56, 'recall': 0.97, 'f1-score': 0.71, 'support': 25000},
+    0: {'precision': 0.00, 'recall': 1.00, 'f1-score': 0.00, 'support': 0},
+    1: {'precision': 0.91, 'recall': 0.21, 'f1-score': 0.35, 'support': 25000}
 }
 
-best_model_report = {
-    -1: {'precision': 0.77, 'recall': 0.95, 'f1-score': 0.85, 'support': 1835},
-    0: {'precision': 0.70, 'recall': 0.35, 'f1-score': 0.47, 'support': 620},
-    1: {'precision': 0.71, 'recall': 0.55, 'f1-score': 0.62, 'support': 473}
+svm_best_model_imdb_report = {
+    -1: {'precision': 0.56, 'recall': 0.97, 'f1-score': 0.71, 'support': 25000},
+    0: {'precision': 0.00, 'recall': 1.00, 'f1-score': 0.00, 'support': 0},
+    1: {'precision': 0.91, 'recall': 0.21, 'f1-score': 0.35, 'support': 25000}
 }
 
-plot_classification_report(twitter_report, 'Classification Report For Twitter Dataset')
-plot_classification_report(best_model_report, 'Classification Report for Best Model For Twitter Dataset')
+svm_imdb_accuracy = 0.5949
+svm_best_model_imdb_accuracy = 0.5949
+
+# Display graphs for IMDb dataset
+plot_classification_report(svm_imdb_report, 'SVM Classification Report For IMDb Dataset')
+plot_classification_report(svm_best_model_imdb_report, 'SVM Classification Report for Best Model For IMDb Dataset')

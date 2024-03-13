@@ -53,7 +53,7 @@ def plot_accuracy_comparison(accuracies, titles):
     plt.show()
 '''
 
-# Example usage:
+# Naive Bayes results for IMDb 
 imdb_report = {
     -1: {'precision': 0.50, 'recall': 1.00, 'f1-score': 0.67, 'support': 25000},
     0: {'precision': 0.00, 'recall': 1.00, 'f1-score': 0.00, 'support': 0},
