@@ -28,22 +28,20 @@ def plot_classification_report(report, title):
 
 
 
-# SVM results for IMDb
-svm_imdb_report = {
-    -1: {'precision': 0.56, 'recall': 0.97, 'f1-score': 0.71, 'support': 25000},
+# Classification Reports and Accuracy for RF
+rf_report = {
+    -1: {'precision': 0.60, 'recall': 0.75, 'f1-score': 0.67, 'support': 25000},
     0: {'precision': 0.00, 'recall': 1.00, 'f1-score': 0.00, 'support': 0},
-    1: {'precision': 0.91, 'recall': 0.21, 'f1-score': 0.35, 'support': 25000}
+    1: {'precision': 0.82, 'recall': 0.30, 'f1-score': 0.44, 'support': 25000}
 }
 
-svm_best_model_imdb_report = {
-    -1: {'precision': 0.56, 'recall': 0.97, 'f1-score': 0.71, 'support': 25000},
+best_model_rf_report = {
+    -1: {'precision': 0.58, 'recall': 0.80, 'f1-score': 0.67, 'support': 25000},
     0: {'precision': 0.00, 'recall': 1.00, 'f1-score': 0.00, 'support': 0},
-    1: {'precision': 0.91, 'recall': 0.21, 'f1-score': 0.35, 'support': 25000}
+    1: {'precision': 0.83, 'recall': 0.28, 'f1-score': 0.42, 'support': 25000}
 }
 
-svm_imdb_accuracy = 0.5949
-svm_best_model_imdb_accuracy = 0.5949
 
-# Display graphs for IMDb dataset
-plot_classification_report(svm_imdb_report, 'SVM Classification Report For IMDb Dataset')
-plot_classification_report(svm_best_model_imdb_report, 'SVM Classification Report for Best Model For IMDb Dataset')
+# Display graphs for RF results
+plot_classification_report(rf_report, 'Classification Report For RF Model on IMDb Dataset')
+plot_classification_report(best_model_rf_report, 'Classification Report for Best RF Model on IMDb Dataset')

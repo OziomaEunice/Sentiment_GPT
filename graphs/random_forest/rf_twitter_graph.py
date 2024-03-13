@@ -28,22 +28,19 @@ def plot_classification_report(report, title):
 
 
 
-# SVM results for Twitter
-svm_twitter_report = {
-    -1: {'precision': 0.81, 'recall': 0.92, 'f1-score': 0.86, 'support': 1835},
-    0: {'precision': 0.66, 'recall': 0.50, 'f1-score': 0.57, 'support': 620},
-    1: {'precision': 0.78, 'recall': 0.63, 'f1-score': 0.69, 'support': 473}
+# RF results for Twitter
+twitter_rf_report = {
+    -1: {'precision': 0.79, 'recall': 0.92, 'f1-score': 0.85, 'support': 1835},
+    0: {'precision': 0.63, 'recall': 0.47, 'f1-score': 0.54, 'support': 620},
+    1: {'precision': 0.76, 'recall': 0.55, 'f1-score': 0.64, 'support': 473}
 }
 
-svm_best_model_twitter_report = {
-    -1: {'precision': 0.81, 'recall': 0.92, 'f1-score': 0.86, 'support': 1835},
-    0: {'precision': 0.66, 'recall': 0.50, 'f1-score': 0.57, 'support': 620},
-    1: {'precision': 0.78, 'recall': 0.63, 'f1-score': 0.69, 'support': 473}
+best_model_twitter_rf_report = {
+    -1: {'precision': 0.79, 'recall': 0.92, 'f1-score': 0.85, 'support': 1835},
+    0: {'precision': 0.64, 'recall': 0.47, 'f1-score': 0.54, 'support': 620},
+    1: {'precision': 0.76, 'recall': 0.55, 'f1-score': 0.64, 'support': 473}
 }
 
-svm_twitter_accuracy = 0.7845
-svm_best_model_twitter_accuracy = 0.7845
-
-# Display graphs for Twitter dataset
-plot_classification_report(svm_twitter_report, 'SVM Classification Report For Twitter Dataset')
-plot_classification_report(svm_best_model_twitter_report, 'SVM Classification Report for Best Model For Twitter Dataset')
+# Display graphs for Twitter RF results
+plot_classification_report(twitter_rf_report, 'Classification Report For RF Model on Twitter Dataset')
+plot_classification_report(best_model_twitter_rf_report, 'Classification Report for Best RF Model on Twitter Dataset')
