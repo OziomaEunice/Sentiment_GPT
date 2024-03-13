@@ -26,9 +26,9 @@ def plot_accuracy_comparison(accuracies, titles):
 
     plt.show()
 
-# SVM Twitter and IMDb results
-twitter_accuracy = 0.7845
-imdb_accuracy = 0.5949
+# RF Twitter and IMDb results
+twitter_accuracy = 0.7637
+imdb_accuracy = 0.4908
 
 # Display accuracy comparison
 plot_accuracy_comparison([twitter_accuracy, imdb_accuracy],
