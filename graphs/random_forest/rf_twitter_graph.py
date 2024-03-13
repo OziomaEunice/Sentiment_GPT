@@ -27,7 +27,6 @@ def plot_classification_report(report, title):
     plt.show()
 
 
-
 # RF results for Twitter
 twitter_rf_report = {
     -1: {'precision': 0.79, 'recall': 0.92, 'f1-score': 0.85, 'support': 1835},

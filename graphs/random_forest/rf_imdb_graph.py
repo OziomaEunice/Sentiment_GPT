@@ -27,7 +27,6 @@ def plot_classification_report(report, title):
     plt.show()
 
 
-
 # Classification Reports and Accuracy for RF
 rf_report = {
     -1: {'precision': 0.60, 'recall': 0.75, 'f1-score': 0.67, 'support': 25000},
