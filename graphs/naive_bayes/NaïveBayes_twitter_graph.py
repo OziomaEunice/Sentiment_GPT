@@ -29,15 +29,15 @@ def plot_classification_report(report, title):
 
 # Naive Bayes results for Twitter US Airline  
 twitter_report = {
-    -1: {'precision': 0.67, 'recall': 1.00, 'f1-score': 0.80, 'support': 1835},
-    0: {'precision': 0.78, 'recall': 0.12, 'f1-score': 0.21, 'support': 620},
-    1: {'precision': 0.82, 'recall': 0.21, 'f1-score': 0.33, 'support': 473}
+    -1: {'precision': 0.67, 'recall': 1.00, 'f1-score': 0.80, 'support': 4589},
+    0: {'precision': 0.79, 'recall': 0.10, 'f1-score': 0.18, 'support': 1550},
+    1: {'precision': 0.89, 'recall': 0.18, 'f1-score': 0.30, 'support': 1181}
 }
 
 best_model_report = {
-    -1: {'precision': 0.77, 'recall': 0.95, 'f1-score': 0.85, 'support': 1835},
-    0: {'precision': 0.70, 'recall': 0.35, 'f1-score': 0.47, 'support': 620},
-    1: {'precision': 0.71, 'recall': 0.55, 'f1-score': 0.62, 'support': 473}
+    -1: {'precision': 0.76, 'recall': 0.95, 'f1-score': 0.85, 'support': 4589},
+    0: {'precision': 0.70, 'recall': 0.32, 'f1-score': 0.44, 'support': 1550},
+    1: {'precision': 0.71, 'recall': 0.52, 'f1-score': 0.60, 'support': 1181}
 }
 
 plot_classification_report(twitter_report, 'Classification Report For Twitter Dataset')

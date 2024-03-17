@@ -27,8 +27,8 @@ def plot_accuracy_comparison(accuracies, titles):
     plt.show()
 
 # Naive Bayes results for Twitter and IMDb
-best_model_twitter_accuracy = 0.7579
-best_model_imdb_accuracy = 0.5845
+best_model_twitter_accuracy = 0.7496
+best_model_imdb_accuracy = 0.5741
 
 plot_accuracy_comparison([best_model_twitter_accuracy, best_model_imdb_accuracy],
                          ['Best Model (Twitter)', 'Best Model (IMDb)'])
