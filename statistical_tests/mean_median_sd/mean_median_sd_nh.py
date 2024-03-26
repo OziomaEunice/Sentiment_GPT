@@ -48,13 +48,29 @@ rf_model_twitter_nh = {
 
 
 #------------IMDb Movie Review Dataset (No Hyperparameter)------------#
+# svm model
+svm_model_imdb_nh = {
+    "accuracy": [],
+    "precision": [],
+    "recall": [],
+    "f1_score": []
+}
 
+# naive bayes model
+nb_model_imdb_nh = {
+    "accuracy": [],
+    "precision": [],
+    "recall": [],
+    "f1_score": []
+}
 
-
-
-
-
-
+# random forest model
+rf_model_imdb_nh = {
+    "accuracy": [],
+    "precision": [],
+    "recall": [],
+    "f1_score": []
+}
 
 
 
@@ -64,6 +80,6 @@ rf_model_twitter_nh = {
 calculate_mean_median_sd(svm_model_twitter_nh, "SVM (Twitter No Hyperparameter)")
 calculate_mean_median_sd(nb_model_twitter_nh, "Naive Bayes (Twitter No Hyperparameter)")
 calculate_mean_median_sd(rf_model_twitter_nh, "Random Forest (Twitter No Hyperparameter)")
-# calculate_mean_median_sd(svm_model_imdb_nh, "SVM (IMDb No Hyperparameter)")
-# calculate_mean_median_sd(nb_model_imdb_nh, "Naive Bayes (IMDb No Hyperparameter)")
-# calculate_mean_median_sd(rf_model_imdb_nh, "Random Forest (IMDb No Hyperparameter)")
+calculate_mean_median_sd(svm_model_imdb_nh, "SVM (IMDb No Hyperparameter)")
+calculate_mean_median_sd(nb_model_imdb_nh, "Naive Bayes (IMDb No Hyperparameter)")
+calculate_mean_median_sd(rf_model_imdb_nh, "Random Forest (IMDb No Hyperparameter)")

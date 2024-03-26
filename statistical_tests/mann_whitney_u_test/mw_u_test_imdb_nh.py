@@ -9,41 +9,50 @@ The SST that is used is the Mann-Whitney U test.
 # Importing the necessary libraries
 from scipy.stats import mannwhitneyu
 
-#------------IMDb Movie Review Dataset------------#
-# Accuracy
-svm_model_twitter_nh_a = [] # svm model accuracy (no hyperparameters)
-svm_model_twitter_h_a = [] # svm model accuracy (hyperparameters)
-nb_model_twitter_nh_a = [] # naive bayes model accuracy (no hyperparameters)
-nb_model_twitter_h_a = [] # naive bayes model accuracy (hyperparameters)
-rf_model_twitter_nh_a = [] # random forest model accuracy (no hyperparameters)
-rf_model_twitter_h_a = [] # random forest model accuracy (hyperparameters)
+#------------IMDb Movie Review Dataset (No Hyperparameter)------------#
+# svm model
+svm_model_imdb_nh = {
+    "accuracy": [],
+    "precision": [],
+    "recall": [],
+    "f1_score": []
+}
 
-# Precision
-svm_model_twitter_nh_p = [] # svm model precision (no hyperparameters)
-svm_model_twitter_h_p = [] # svm model precision (hyperparameters)
-nb_model_twitter_nh_p = [] # naive bayes model precision (no hyperparameters)
-nb_model_twitter_h_p = [] # naive bayes model precision (hyperparameters)
-rf_model_twitter_nh_p = [] # random forest model precision (no hyperparameters)
-rf_model_twitter_h_p = [] # random forest model precision (hyperparameters)
+# naive bayes model
+nb_model_imdb_nh = {
+    "accuracy": [],
+    "precision": [],
+    "recall": [],
+    "f1_score": []
+}
 
-# Recall
-svm_model_twitter_nh_r = [] # svm model recall (no hyperparameters)
-svm_model_twitter_h_r = [] # svm model recall (hyperparameters)
-nb_model_twitter_nh_r = [] # naive bayes model recall (no hyperparameters)
-nb_model_twitter_h_r = [] # naive bayes model recall (hyperparameters)
-rf_model_twitter_nh_r = [] # random forest model recall (no hyperparameters)
-rf_model_twitter_h_r = [] # random forest model recall (hyperparameters)
-
-# F1-score
-svm_model_twitter_nh_f1 = [] # svm model f1 (no hyperparameters)
-svm_model_twitter_h_f1 = [] # svm model f1 (hyperparameters)
-nb_model_twitter_nh_f1 = [] # naive bayes model f1 (no hyperparameters)
-nb_model_twitter_h_f1 = [] # naive bayes model f1 (hyperparameters)
-rf_model_twitter_nh_f1 = [] # random forest model f1 (no hyperparameters)
-rf_model_twitter_h_f1 = [] # random forest model f1 (hyperparameters)
+# random forest model
+rf_model_imdb_nh = {
+    "accuracy": [],
+    "precision": [],
+    "recall": [],
+    "f1_score": []
+}
 
 
+# Define a function that will calculate the Mann-Whitney U test
+# and prints the results for each score performance metric
+def calculate_mannwhitneyu(model_data1, model_data2, model_name1, model_name2, metrics):
+    for metric in metrics:
+        statistic, p_value = mannwhitneyu(model_data1[metric], model_data2[metric])
+        print(f"{model_name1} vs {model_name2} ({metric}):")
+        print("Mann-Whitney U Statistic:", statistic)
+        print("p-value:", p_value)
+        if p_value < 0.05:
+            print(f"There is a statistically significant difference between {model_name1} and {model_name2} for {metric}.")
+        else:
+            print(f"There is no statistically significant difference between {model_name1} and {model_name2} for {metric}.")
+        print()
 
+# Specify performance metrics to evaluate
+metrics_to_evaluate = ["accuracy", "precision", "recall", "f1_score"]
 
-
-#------------Calculate Mann-Whitney U test for IMDb Movie Review Dataset------------#
+# Perform Mann-Whitney U test for different model comparisons
+calculate_mannwhitneyu(svm_model_imdb_nh, nb_model_imdb_nh, "SVM", "Naive Bayes", metrics_to_evaluate) # svm no-hyperparameters vs nb no-hyperparameters
+calculate_mannwhitneyu(svm_model_imdb_nh, rf_model_imdb_nh, "SVM", "Random Forest", metrics_to_evaluate) # svm no-hyperparameters vs rf no-hyperparameters
+calculate_mannwhitneyu(nb_model_imdb_nh, rf_model_imdb_nh, "Naive Bayes", "Random Forest", metrics_to_evaluate) # nb no-hyperparameters vs rf no-hyperparameters
