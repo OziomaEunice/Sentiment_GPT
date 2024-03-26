@@ -9,9 +9,9 @@ The SST that is used is the Mann-Whitney U test.
 # Importing the necessary libraries
 from scipy.stats import mannwhitneyu
 
-#------------Twitter US Airline Sentiment Dataset (No Hyperparameter)------------#
+#------------Twitter US Airline Sentiment Dataset (Hyperparameter)------------#
 # svm model
-svm_model_twitter_nh = {
+svm_model_twitter_h = {
     "accuracy": [],
     "precision": [],
     "recall": [],
@@ -19,7 +19,7 @@ svm_model_twitter_nh = {
 }
 
 # naive bayes model
-nb_model_twitter_nh = {
+nb_model_twitter_h = {
     "accuracy": [],
     "precision": [],
     "recall": [],
@@ -27,7 +27,7 @@ nb_model_twitter_nh = {
 }
 
 # random forest model
-rf_model_twitter_nh = {
+rf_model_twitter_h = {
     "accuracy": [],
     "precision": [],
     "recall": [],
@@ -53,6 +53,6 @@ def calculate_mannwhitneyu(model_data1, model_data2, model_name1, model_name2, m
 metrics_to_evaluate = ["accuracy", "precision", "recall", "f1_score"]
 
 # Perform Mann-Whitney U test for different model comparisons
-calculate_mannwhitneyu(svm_model_twitter_nh, nb_model_twitter_nh, "SVM", "Naive Bayes", metrics_to_evaluate) # svm no-hyperparameters vs nb no-hyperparameters
-calculate_mannwhitneyu(svm_model_twitter_nh, rf_model_twitter_nh, "SVM", "Random Forest", metrics_to_evaluate) # svm no-hyperparameters vs rf no-hyperparameters
-calculate_mannwhitneyu(nb_model_twitter_nh, rf_model_twitter_nh, "Naive Bayes", "Random Forest", metrics_to_evaluate) # nb no-hyperparameters vs rf no-hyperparameters
+calculate_mannwhitneyu(svm_model_twitter_h, nb_model_twitter_h, "SVM", "Naive Bayes", metrics_to_evaluate) # svm hyperparameters vs nb hyperparameters
+calculate_mannwhitneyu(svm_model_twitter_h, rf_model_twitter_h, "SVM", "Random Forest", metrics_to_evaluate) # svm hyperparameters vs rf hyperparameters
+calculate_mannwhitneyu(nb_model_twitter_h, rf_model_twitter_h, "Naive Bayes", "Random Forest", metrics_to_evaluate) # nb hyperparameters vs rf hyperparameters
